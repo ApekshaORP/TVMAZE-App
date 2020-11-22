@@ -1,0 +1,21 @@
+.author_name{
+    display: flex;
+    color: white;
+    font-size: 1rem;
+    font-weight: normal;
+    justify-content: center;
+    align-items: center;
+    
+    margin-right: 10px;}
+.slider img{
+    width:150px; 
+    height:150px;
+}
+ @media screen and (max-width:800px){
+            .slider img {
+                width:120px; 
+               height:120px;
+               border:3px solid #121314;
+               margin-left: 10px;
+    }
+ }

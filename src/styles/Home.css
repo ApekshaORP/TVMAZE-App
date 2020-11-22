@@ -1,0 +1,73 @@
+.App-header {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .error_content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+  }
+  .error_text{
+    text-align: center  }
+    .error_text img{
+        align-items: center;
+    }
+  .title{
+      padding: 2rem;
+    color: white;
+    font-size:20px;
+    font-weight: bold;
+  }
+  @media screen and (max-width:800px){
+    .title{
+    font-size:15px;
+  }
+  }
+  .homeSlider{
+    margin-right: 40px;
+    margin-left: 40px;
+    padding-bottom: 50px;
+    margin-top: 35px;
+    border-bottom: 1px solid rgba(151,151,151,0.21)
+  }
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #070d18;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    align-items: center;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .main_home{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  .container_slider {
+    position: relative;
+    /* max-width: 800px; */
+    margin: 0 auto;
+  } 
+  .container_slider .content {
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 72%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+ 
