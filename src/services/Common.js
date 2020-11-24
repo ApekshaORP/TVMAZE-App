@@ -36,7 +36,6 @@ return list
 
 // Shows list sorted by rating
 export const topShows = async () => {
-    var arr = []
     var showList = await getShows();
     var list=showList.data.sort((a,b) => b.rating.average - a.rating.average );
     return list;
@@ -45,5 +44,7 @@ export const topShows = async () => {
 //get Search shows
 export const searchShows = async (searchValue) => {
     var showList = await getShowsBySearch(searchValue);
-    return showList;
+    console.log(showList)
+
+    return showList.data;
 };

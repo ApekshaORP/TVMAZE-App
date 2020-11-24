@@ -45,7 +45,7 @@ class Navbar extends Component {
                                <p  className="side_menu">Home</p>
                            </a><div className="dropdown" >
                                {/* List of all genres in mobile and tab view */}
-                                {generList.map((item, index) => (                              
+                                {generList&&generList.map((item, index) => (                              
                               <div key={index}>
                                      <a href={`/tv/showsearch/${item}`}>
                                         <p className="side_menu">{item}</p>
@@ -70,6 +70,7 @@ class Navbar extends Component {
                         {/* input for searching movies and shows */}
                         <li className="search_icon">
                             <input placeholder="Search movie names" type="search"
+                            id="inputSearch"
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
                                         this.search(event)

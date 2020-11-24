@@ -1,6 +1,7 @@
 /* comman slider.*/
 import React, { Component } from "react";
 import Slider from "react-slick";
+// import Star from '../images/star_icon';
 import '../styles/Shows.css';
 import '../styles/Home.css';
 
@@ -8,7 +9,7 @@ export default class SimpleSlider extends Component {
   render() {
     const settings = {
       speed: 500,
-      autoplay: true,
+      autoplay: false,
       responsive: [
         {
           breakpoint: 2024,
@@ -41,13 +42,12 @@ export default class SimpleSlider extends Component {
       <div>
         <Slider {...settings}
         >
-          {showList.slice(0, 10).map((item, index) => {
-            return(  
+          {showList && showList.slice(0, 10).map((item, index) => (
             <a className="isDisabled" href={`/tv/${item.name}/${item.id}`} key={index}>
               <div className="slider_img container_slider">
-                <img src={item.image.medium} alt={item.name} />
+                <img src={item.image&&item.image.medium} alt={item.name} />
                 <div class="content">
-                  <div class="list_item">{item.rating ? <>Rating : <p className="details_rating">{item.rating.average}</p></> : ""
+                  <div class="list_item">{item.rating&&item.rating ? <>Rating : <p className="details_rating">{item.rating.average}</p></> : ""
                   }
                   </div>
                   <h3></h3>
@@ -55,7 +55,7 @@ export default class SimpleSlider extends Component {
                 </div>
               </div>
             </a>
-          )} )}
+          ) )}
         </Slider>
       </div>
     );

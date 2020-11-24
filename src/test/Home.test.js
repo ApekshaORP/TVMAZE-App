@@ -1,33 +1,64 @@
-import { render, screen } from '@testing-library/react';
 import Home from '../component/Home';
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
+jest.mock('../services/ApiCall');
+const responseData =
+     [
+        {
+            "score": 16.019352,
+            "show": {
+                "id": 275,
+                "url": "http://www.tvmaze.com/shows/275/ali-g-rezurection",
+                "name": "Ali G: Rezurection",
+                "type": "Scripted",
+                "language": "English",
+                "genres": [
+                    "Comedy"
+                ],
+                "rating": {
+                    "average": 5.8
+                },
 
-const SetUp=(props={})=>{
-    const component=shallow(<Home/>)
+                "image": {
+                    "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/60/152357.jpg",
+                    "original": "http://static.tvmaze.com/uploads/images/original_untouched/60/152357.jpg"
+                },
+
+            }
+        },
+        {
+            "score": 15.833251,
+            "show": {
+                "id": 44163,
+                "url": "http://www.tvmaze.com/shows/44163/bangkok-g-story",
+                "name": "Bangkok G Story",
+                "type": "Scripted",
+
+                "genres": [
+                    "Drama",
+                    "Comedy"
+                ],
+
+                "rating": {
+                    "average": null
+                },
+
+                "image": {
+                    "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/213/533970.jpg",
+                    "original": "http://static.tvmaze.com/uploads/images/original_untouched/213/533970.jpg"
+                }
+            }
+        }];
+
+const SetUp=()=>{
+    const component=shallow(<Home />)
     return component
 }
 describe('Home component', () => {
-jest.mock('../services/ApiCall')
-// test('renders home react component', () => {
-//   render(<Home />);
-//   const linkElement = screen.getByText(/Showing Search result for/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
-// it(" fetches data from Api",done=>{
-//   const wraper =SetUp();
-//  wraper.update();
-//  setTimeout(()=>{
-//   expect(wraper.find('.Slider').length).toEqual(1);
-//   done();
-//  },5000);
- 
-// });
+  it ('Home should render without error',()=>{
+    const component=SetUp();
+    component.setState({showList:responseData})
+    const wrapper =component.find('.homeSlider');
+    expect(wrapper.length).toBe(1);
+ })
 })
-  it ('It should render without',()=>{
-   const component=SetUp()
-   const wrapper =component.find('.main_home');
-   expect(wrapper.length).toBe(1);
-   
-
-})
+  

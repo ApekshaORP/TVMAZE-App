@@ -30,6 +30,7 @@ nav ul li.logo{
 nav ul div.items{
     display: flex;
     padding: 0 110px;
+    margin-right: 625px;
 }
 nav ul div.items a{
     text-decoration: none;

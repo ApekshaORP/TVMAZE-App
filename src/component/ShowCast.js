@@ -58,7 +58,7 @@ export default class ShowCast extends Component {
                 <img src={item.character.image.medium} alt={item.name}/>:
                 <img src={No_Cast_Img} alt="Image not found"/>}
                 <div >
-            <div className="author_name">{item.person.name}</div>
+            <div className="author_name">{item.person &&item.person.name}</div>
                 </div>
                 </div> 
                 </a>

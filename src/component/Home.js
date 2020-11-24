@@ -24,14 +24,14 @@ class Home extends Component {
         const { showList } = this.state;
         return (
             <div>
-          {showList.length>0?
+          {showList &&showList.length>0?
                 <div >
                 <div className="homeSlider">
                     <Slider showList={showList} />
                 </div>
                 <div className="title"> Shows Recommended For You
                 </div>
-                <div className="show_container">{showList.length > 0 && showList.slice(10,showList.length-1).map((show) => (
+                <div className="show_container">{showList.length > 0 && showList&&showList.slice(10,showList.length-1).map((show) => (
                     <ShowsCard {...show} key={show.id}  />
                 ))}
                 </div>

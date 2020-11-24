@@ -21,7 +21,7 @@ class ShowsDetails extends Component {
         //fetch Api data from getEpisodes() and getCastList() function.
         const EpisodeList = await getEpisodes(ShowId);
         const showDetails = await getCastList(ShowId);
-        this.setState({ EpisodeList: EpisodeList, showDetails: showDetails });
+        this.setState({ EpisodeList: EpisodeList.data, showDetails: showDetails.data });
     };
     render() {
         const { showDetails, EpisodeList } = this.state;
@@ -30,21 +30,21 @@ class ShowsDetails extends Component {
                 <div>
                     <div class="container">
                         <div class="image">
-                            {showDetails.image ? <img src={showDetails.image && showDetails.image.medium} alt="show poster" /> :
+                            {showDetails&&showDetails.image ? <img src={showDetails.image && showDetails.image.medium} alt="show poster" /> :
                                 <img src={NoImg} alt="Image not found" />}
                         </div>
                         <div class="main">
-                            <h2>{showDetails.name}</h2>
+                            <h2>{showDetails && showDetails.name}</h2>
                             <div class="list_item">
-                                <br />{showDetails.language ? <>Available in :<p className="details_data"> {showDetails.language}</p> </> : ""
+                                <br />{showDetails&&showDetails.language ? <>Available in :<p className="details_data"> {showDetails.language}</p> </> : ""
                                 }
                             </div>
                             <br /> <div class="list_item">{showDetails.rating && showDetails.rating.average ? <>Rating : <p className="details_rating">{showDetails.rating.average}</p></> : ""
                             }
                             </div> <br />
-                            {showDetails.genres && showDetails.genres ?
+                            {showDetails && showDetails.genres ?
                                 <>Generes :
-                                {showDetails.genres.map((generes, index) => (
+                                {showDetails && showDetails.genres.map((generes, index) => (
                                     <li key={index} className="details_rating"> {generes}</li>
                                 ))}
                                 </> : ""
