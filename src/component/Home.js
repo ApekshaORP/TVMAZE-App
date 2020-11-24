@@ -26,6 +26,7 @@ class Home extends Component {
             <div>
           {showList &&showList.length>0?
                 <div >
+                    <h2><span >Popular Shows</span></h2>
                 <div className="homeSlider">
                     <Slider showList={showList} />
                 </div>

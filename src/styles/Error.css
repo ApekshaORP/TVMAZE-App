@@ -1,0 +1,10 @@
+.take_home{
+    text-decoration: none;
+    color: white;
+}
+.error_text{
+    display: flex;
+  }
+    .error_text img{
+        justify-content: center;
+    }

@@ -26,6 +26,18 @@ nav ul {
 }
 nav ul li.logo{
     flex: 1;
+  
+}
+nav ul li.logo a{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+nav ul li.logo h3{
+  margin-top: 10px;
+  margin-left: 5px;
+ 
 }
 nav ul div.items{
     display: flex;

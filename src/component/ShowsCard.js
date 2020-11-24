@@ -2,6 +2,7 @@
 */
 import React, { Component } from 'react';
 import NoImg from '../images/noimg.jpg';
+import starImg from '../images/star.png';
 import '../styles/Shows.css';
 class ShowsCard extends Component {
     render() {
@@ -14,7 +15,9 @@ class ShowsCard extends Component {
                             <img src={NoImg} alt={name} className="no_img" />}
                         <div className="show_info">
                             {this.props.name ? <h5> {name}</h5> : ""}
-                            {this.props.rating && this.props.rating.average ? <h5>{rating.average}</h5> : "NA"}
+                            {this.props.rating && this.props.rating.average ?<div className="Star_img"> 
+                                <img src={starImg} alt="star" />
+                            <h5>{rating.average}</h5> </div>: "NA"}
                         </div>
                         <div className="show_overview">
                             <p>Overview:</p>

@@ -85,7 +85,15 @@
     transform: translateY(0%);
 
 }
-
+.Star_img{
+    width: 20px;
+    margin-left: 40px;
+    display: flex;
+    padding: 0.5rem;
+}
+/* .Star_img img{
+    margin-left: 0.1rem;
+} */
 .slider_img img {
 /* width: 50%; */
 height:20%;
@@ -106,7 +114,13 @@ height: 25%;
 
     }
     @media screen and (max-width:800px){
-      
+      .Star_img  {
+          margin-left: 0px;
+          padding: 0px;
+      }
+      .Star_img img{
+        display: none;
+    }
 .slider_img img {
     margin-left: 40px;
 }  

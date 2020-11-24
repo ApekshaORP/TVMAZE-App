@@ -37,6 +37,7 @@ class Navbar extends Component {
                         <li className="logo">
                             <a href="/" >
                                 <img src={Logo} className="logo_img" alt="logo" />
+                                <h3>TVMaze</h3>
                             </a>
                         </li>
                         <li className="btn">
@@ -56,7 +57,7 @@ class Navbar extends Component {
                         </li>
                         <div className="items">
                             <div className="dropdown">
-                                <li><a href="/">SHOWS</ a></li>
+                                <li><a >SHOWS</ a></li>
                                 {/* List of all genres in desktop view */}
                                 <div className="dropdown-content">{generList.map((item, inex) => (
                                     <a href={`/tv/showsearch/${item}`} key={inex}>

@@ -9,7 +9,7 @@ export default class SimpleSlider extends Component {
   render() {
     const settings = {
       speed: 500,
-      autoplay: false,
+      autoplay: true,
       responsive: [
         {
           breakpoint: 2024,

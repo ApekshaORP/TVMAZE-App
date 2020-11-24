@@ -10,18 +10,13 @@
     align-items: center;
     padding: 3rem;
   }
-  .error_text{
-    text-align: center  }
-    .error_text img{
-        align-items: center;
-    }
+
   .title{
       padding: 2rem;
     color: white;
     font-size:20px;
     font-weight: bold;
   }
-
   .homeSlider{
     margin-right: 40px;
     margin-left: 40px;
@@ -67,12 +62,26 @@
     align-items: center;
     border-radius:0 0 50px 50px;
   }
-  @media screen and (max-width:800px){
-    .title{
-    font-size:15px;
-  }
-  .container_slider .content{
-    width: 60%;
-    margin-left: 45px;
-  }
-  }
+
+  h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    margin-top: 36px;
+ } 
+ 
+ h2 span { 
+     background:#070d18; 
+     padding:0 10px; 
+ }
+ @media screen and (max-width:800px){
+  .title{
+  font-size:15px;
+}
+.container_slider .content{
+  width: 60%;
+  margin-left: 45px;
+}
+}
