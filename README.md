@@ -1,3 +1,6 @@
+# Prerequisites
+Download node from below link
+https://nodejs.org/en/download/
 
 # Getting Started with Create React App
 
@@ -63,7 +66,6 @@ It correctly bundles React in production mode and optimizes the build for the be
    React-slick is used to give carousel effect.
    Please refer below url for more details:
    https://www.npmjs.com/package/react-slick
-
 
 
 ## Git clone

@@ -59,3 +59,9 @@ border-radius: 50px;
   align-items: center;
   flex-wrap: wrap;
 }
+@media screen and (max-width:300px){
+  .details_rating{
+    margin-top: 0px;
+   
+  }
+}

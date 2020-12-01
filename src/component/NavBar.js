@@ -44,7 +44,7 @@ class Navbar extends Component {
                             <img src={Menu} alt="side menu" onClick={this.clickMenu} />
                             {this.state.isMenuOpen ? <div className="menu_container"> <a href="/">
                                <p  className="side_menu">Home</p>
-                           </a><div className="dropdown" >
+                           </a><div className="dropdown_menu" >
                                {/* List of all genres in mobile and tab view */}
                                 {generList&&generList.map((item, index) => (                              
                               <div key={index}>
@@ -57,7 +57,7 @@ class Navbar extends Component {
                         </li>
                         <div className="items">
                             <div className="dropdown">
-                                <li><a >SHOWS</ a></li>
+                                <li className="showlist_title"><a href >SHOWS</ a></li>
                                 {/* List of all genres in desktop view */}
                                 <div className="dropdown-content">{generList.map((item, inex) => (
                                     <a href={`/tv/showsearch/${item}`} key={inex}>

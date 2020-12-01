@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../component/NavBar';
 import { render, screen } from '@testing-library/react';
 import axios from "axios";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 jest.mock('axios');
 const genresInfoData = ["Drama", "Science-Fiction", "Family"];
 const showsInfoData = [
@@ -75,7 +75,7 @@ const SetUp=(props={})=>{
     return component
 }
 describe('Nav bar component', () => {
-   it ('It should render with logo',()=>{
+   it ('Should render when simulate events',()=>{
     const component=SetUp()
     const wrapper =component.find('.logo_img');
     let event={preventDefault:jest.fn(),target:{value:{}},key:"Enter"}

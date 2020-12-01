@@ -9,7 +9,6 @@ import { render, screen } from '@testing-library/react';
         return component
     }
     let wrapper;
-    let props;
     const data= [
             {
                 "score": 16.019352,
@@ -58,7 +57,6 @@ import { render, screen } from '@testing-library/react';
             }];
 
     beforeEach(() => {
-        props = { data }
         wrapper = shallow(<ShowList />)
     });
     afterEach(() => {

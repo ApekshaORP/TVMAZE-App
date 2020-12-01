@@ -27,7 +27,7 @@ const SetUp=()=>{
     return component
 }
 describe('Show Card component', () => {
-   it ('find selector show_overview in component',()=>{
+   it ('Find selector show_overview in component',()=>{
     const component=SetUp()
      const wrapper =component.find('.show_overview');
     expect(wrapper.length).toBe(1); 

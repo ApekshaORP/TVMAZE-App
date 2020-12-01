@@ -1,7 +1,7 @@
 /* comman slider.*/
 import React, { Component } from "react";
 import Slider from "react-slick";
-// import Star from '../images/star_icon';
+import starImg from '../images/star.png';
 import '../styles/Shows.css';
 import '../styles/Home.css';
 
@@ -55,11 +55,11 @@ export default class SimpleSlider extends Component {
               <div className="slider_img container_slider">
                 <img src={item.image&&item.image.medium} alt={item.name} />
                 <div class="content">
-                  <div class="list_item">{item.rating&&item.rating ? <>Rating : <p className="details_rating">{item.rating.average}</p></> : ""
+                  <div class="list_item">{item.rating&&item.rating ? <div className="rating" >
+                    <img src={starImg} alt="star" className="home_card"/>                   
+                    <p className="details_rating">{item.rating.average}</p></div> : ""
                   }
                   </div>
-                  <h3></h3>
-
                 </div>
               </div>
             </a>

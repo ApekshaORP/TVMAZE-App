@@ -15,9 +15,11 @@ class ShowsCard extends Component {
                             <img src={NoImg} alt={name} className="no_img" />}
                         <div className="show_info">
                             {this.props.name ? <h5> {name}</h5> : ""}
+                            <div>
                             {this.props.rating && this.props.rating.average ?<div className="Star_img"> 
                                 <img src={starImg} alt="star" />
-                            <h5>{rating.average}</h5> </div>: "NA"}
+                            <h5>{rating.average}</h5> </div>: <h5>NA</h5>}
+                            </div>
                         </div>
                         <div className="show_overview">
                             <p>Overview:</p>

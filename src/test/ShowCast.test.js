@@ -67,7 +67,6 @@ describe('Show cast component', () => {
 it('should call methodName during componentDidMount', () => {
     const wrapper = mount(<ShowCast  Title={Title}EpisodeList={EpisodeData} CastList={CastList} />);
     const instance = wrapper.instance();
-  
   });
   });
 

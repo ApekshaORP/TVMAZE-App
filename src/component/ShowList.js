@@ -17,7 +17,10 @@ class ShowList extends Component {
             isGener: false
         }
     }
-    async componentDidMount() {
+     componentDidMount() {
+      this.ShowListData();
+    }
+     ShowListData=async()=>{
         const Url = window.location.pathname.split("/");
         if (Url[1] === "tv") {
             // for genres list API
@@ -34,7 +37,6 @@ class ShowList extends Component {
             const generShowList = await searchShows(searchValue);
             this.setState({ searchResult:generShowList, isGener: false })
          }
-
     }
     render() {
         const { searchResult, isGener } = this.state;

@@ -7,7 +7,7 @@ function Error() {
             <h2>
                 404 Not Found</h2>
             <div className="error_text">
-            <img src="https://www.hotstar.com/assets/e888f274671ec4c5a93e1776c3f6137e.png"/>
+            <img src="https://www.hotstar.com/assets/e888f274671ec4c5a93e1776c3f6137e.png" alt="erro_TV"/>
 
                   </div>
             <div ><span ></span>

@@ -47,13 +47,13 @@ const SetUp=(props={})=>{
     return component
 }
 describe('Show Details component', () => {
-   it ('It should match snapshot',()=>{
+   it("Should renders data when user makes a valid text to search field",()=>{
     const component=SetUp();
     component.setState({showDetails:responseData,EpisodeList:EpisodeList})
-     const wrapper =component.find('.container');
+     component.find('.container');
 })
 it('should call methodName during componentDidMount', () => {
     const wrapper = mount(<ShowDetails  showDetails={responseData}EpisodeList={EpisodeList} />);
-    const instance = wrapper.instance();
+     wrapper.instance();
   });
   });

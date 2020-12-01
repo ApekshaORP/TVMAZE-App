@@ -31,7 +31,7 @@ class ShowsDetails extends Component {
                     <div class="container">
                         <div class="image">
                             {showDetails&&showDetails.image ? <img src={showDetails.image && showDetails.image.medium} alt="show poster" /> :
-                                <img src={NoImg} alt="Image not found" />}
+                                <img src={NoImg} alt="Image_not_found" />}
                         </div>
                         <div class="main">
                             <h2>{showDetails && showDetails.name}</h2>
@@ -51,7 +51,8 @@ class ShowsDetails extends Component {
                             }
                             <br />
                             {showDetails.summary ?
-                                <div className="details_data" dangerouslySetInnerHTML={{ __html: showDetails.summary }}></div> :
+                            <>Summary :
+                                <div className="details_data" dangerouslySetInnerHTML={{ __html: showDetails.summary }}></div></> :
                                 ""}
                         </div>
                     </div>

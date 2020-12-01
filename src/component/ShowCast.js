@@ -47,16 +47,16 @@ export default class ShowCast extends Component {
     return (<div className="show_cast">
     
      {castList && castList.cast &&castList.cast.length>0? 
-     <>  <div className="title">{Title}</div>
+     <>  <div className="episode_title">{Title}</div>
       <div className="slider slider_container">
         {/* Slider list for cast in shows */}
         <Slider {...settings}>
             {castList && castList.cast.map((item,index)=>(
-                     <a  key={index}>
+                     <a href key={index}>
                 <div className="slider" key={index}>
                   {item.character&&item.character.image&&item.character.image.medium?
                 <img src={item.character.image.medium} alt={item.name}/>:
-                <img src={No_Cast_Img} alt="Image not found"/>}
+                <img src={No_Cast_Img} alt="Image_not_found"/>}
                 <div >
             <div className="author_name">{item.person &&item.person.name}</div>
                 </div>
@@ -66,15 +66,15 @@ export default class ShowCast extends Component {
         </Slider>
       </div></>:""}
       {EpisodeList &&EpisodeList.length> 0?
-      <>  <div className="title">{Title}</div>
+      <>  <div className="episode_title">{Title}</div>
       <div className="slider slider_container">
           {/* Slider list for Episode in shows */}
         <Slider {...settings}>
             {EpisodeList &&EpisodeList.length>0 && EpisodeList.map((item,index)=>(
-                     <a  key={index}>
+                     <a href key={index}>
                 <div className="slider" key={index}>
                   {item.image&&item.image.medium? <img src={item.image&&item.image.medium} alt={item.name} />   
-:<img src={NoImg} alt="Image not found"/>}
+:<img src={NoImg} alt="Image_not_found"/>}
             <p className="author_name">{item.name}</p> 
                 </div> 
                 </a>

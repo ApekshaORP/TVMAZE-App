@@ -10,9 +10,16 @@
     align-items: center;
     padding: 3rem;
   }
-
+.episode_title{
+  padding: 2rem;
+color: white;
+font-size:20px;
+font-weight: bold;
+}
   .title{
       padding: 2rem;
+      display: flex;
+      justify-content: center;
     color: white;
     font-size:20px;
     font-weight: bold;
@@ -51,7 +58,6 @@
   .container_slider .content {
     position: absolute;
     bottom: 0;
-    margin-left: 8px;
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5); 
     color: #f1f1f1;
@@ -81,7 +87,7 @@
   font-size:15px;
 }
 .container_slider .content{
-  width: 60%;
+  width: 58%;
   margin-left: 45px;
 }
 }
@@ -92,3 +98,9 @@ and (max-device-width : 1024px)  {
     margin-left: 5px;
   }
 }
+.home_card{
+  width: 15px;
+  display: flex;
+  padding: 0.5rem;
+}
+
