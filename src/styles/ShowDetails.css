@@ -22,7 +22,8 @@ height: 50%;}
   padding: 0;
 }
 .container {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   font-weight: bold;
   vertical-align: top;
 }

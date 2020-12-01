@@ -86,7 +86,7 @@
 
 }
 .Star_img{
-    width: 20px;
+    width: 15px;
     margin-left: 40px;
     display: flex;
     padding: 0.5rem;
@@ -113,7 +113,7 @@ height: 25%;
     border:3px solid #121314;
 
     }
-    @media screen and (max-width:800px){
+    @media screen and (max-width:768px){
       .Star_img  {
           margin-left: 0px;
           padding: 0px;
@@ -122,6 +122,13 @@ height: 25%;
         display: none;
     }
 .slider_img img {
-    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: 43px;
 }  
     }
+    @media screen and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        .slider_img img {
+            margin-left: 3px;
+        }    }

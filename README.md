@@ -97,6 +97,3 @@ Sends local commits to the remote repository
 
 git push <remote_URL/remote_name> <branch>
 
-
-
-"# TVMAZE-App" 

@@ -22,7 +22,6 @@ class ShowsCard extends Component {
                         <div className="show_overview">
                             <p>Overview:</p>
                             <div dangerouslySetInnerHTML={{ __html: summary }}></div>
-
                         </div>
                     </a>
                 </div> : ""}

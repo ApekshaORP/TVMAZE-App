@@ -83,7 +83,9 @@ nav ul .btn img{
         display: none;
     }nav ul li.logo{
         display: none;  
-    }nav ul{justify-content: space-between;}
+    }nav ul{
+        justify-content: space-between;
+    }
    
 }
 .dropdown {

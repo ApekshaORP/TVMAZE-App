@@ -85,3 +85,10 @@
   margin-left: 45px;
 }
 }
+@media screen and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+  .container_slider .content{
+    width: 170px;
+    margin-left: 5px;
+  }
+}
