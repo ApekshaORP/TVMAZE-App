@@ -5,7 +5,6 @@ export const getShows =async ()  => {
     const res = await axios.get(`${api.Base_url}shows`);
     return res;
 };
-
 export const getEpisodes =async (showNo)  => {
     const res = await axios.get(`${api.Base_url}shows/${showNo}/episodes`);
     return res;

@@ -116,7 +116,8 @@ color: whitesmoke;
 .side_menu{
     color: white;
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:1024px)
+    {
     nav ul .btn img{
         display: block;
     } 

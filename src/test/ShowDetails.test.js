@@ -1,11 +1,8 @@
 import React from 'react';
 import ShowDetails from '../component/ShowsDetails';
-import {shallow,mount} from 'enzyme';
-
+import {shallow} from 'enzyme';
 const responseData =  
-    {
-        
-        image: {
+    {  image: {
             medium: "http://static.tvmaze.com/uploads/images/medium_portrait/60/152357.jpg",
             original: "http://static.tvmaze.com/uploads/images/original_untouched/60/152357.jpg"
         },
@@ -17,8 +14,6 @@ const responseData =
                     average: 5.8
                 },
     }
-
-
     const EpisodeList={
         data:[{
             id: 1,
@@ -42,18 +37,14 @@ const responseData =
             }
             }}]
     }
-const SetUp=(props={})=>{
-    const component=shallow(<ShowDetails  {...props} />)
-    return component
+const SetUp=()=>{
+    const component=shallow(<ShowDetails />);
+    return component;
 }
 describe('Show Details component', () => {
    it("Should renders data when user makes a valid text to search field",()=>{
     const component=SetUp();
-    component.setState({showDetails:responseData,EpisodeList:EpisodeList})
+    component.setState({showDetails:responseData,EpisodeList:EpisodeList});
      component.find('.container');
 })
-it('should call methodName during componentDidMount', () => {
-    const wrapper = mount(<ShowDetails  showDetails={responseData}EpisodeList={EpisodeList} />);
-     wrapper.instance();
-  });
   });

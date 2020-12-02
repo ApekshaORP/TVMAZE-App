@@ -1,5 +1,5 @@
 /* NavBar page contains input search and list of all genres.
-*/ 
+*/
 import React, { Component } from 'react';
 import '../styles/NavBar.css';
 import Logo from '../images/logo.png';
@@ -43,17 +43,17 @@ class Navbar extends Component {
                         <li className="btn">
                             <img src={Menu} alt="side menu" onClick={this.clickMenu} />
                             {this.state.isMenuOpen ? <div className="menu_container"> <a href="/">
-                               <p  className="side_menu">Home</p>
-                           </a><div className="dropdown_menu" >
-                               {/* List of all genres in mobile and tab view */}
-                                {generList&&generList.map((item, index) => (                              
-                              <div key={index}>
-                                     <a href={`/tv/showsearch/${item}`}>
-                                        <p className="side_menu">{item}</p>
-                                    </a>
-                                </div>
-                            ))}
-                            </div></div> : ""}
+                                <p className="side_menu">Home</p>
+                            </a><div className="dropdown_menu" >
+                                    {/* List of all genres in mobile and tab view */}
+                                    {generList && generList.map((item, index) => (
+                                        <div key={index}>
+                                            <a href={`/tv/showsearch/${item}`}>
+                                                <p className="side_menu">{item}</p>
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div></div> : ""}
                         </li>
                         <div className="items">
                             <div className="dropdown">
@@ -71,7 +71,7 @@ class Navbar extends Component {
                         {/* input for searching movies and shows */}
                         <li className="search_icon">
                             <input placeholder="Search movie names" type="search"
-                            id="inputSearch"
+                                id="inputSearch"
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
                                         this.search(event)

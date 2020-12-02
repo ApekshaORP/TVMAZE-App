@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import ShowList from '../component/ShowList';
 import { render, screen } from '@testing-library/react';
-
+import {getSelectectGener} from '../services/Common';
   describe("renders show list component", () => {
     const SetUp=()=>{
         const component=shallow(<ShowList />)
@@ -62,12 +62,12 @@ import { render, screen } from '@testing-library/react';
     afterEach(() => {
         jest.clearAllMocks();
     });
-    it ('find selector title in component',()=>{
-        const component=SetUp()
+    it ('find selector title in component',async()=>{
+        const component=SetUp();
+        component.instance().ShowListData();
         const wrapper =component.find('.title');
         expect(wrapper.length).toBe(1);
-        
-    })
+    });
     it('renders component to find "No Search result for"', () => {
       render(<ShowList />);
       const linkElement = screen.getByText(/No Search result for/i);
@@ -75,10 +75,18 @@ import { render, screen } from '@testing-library/react';
     });
     it("should render component when isGener is true", () => {
         wrapper.find(".title");
-        wrapper.setState({searchResult:data, isGener:true,searchValue:"girls"})
+        wrapper.setState({searchResult:data, isGener:true,searchValue:"girls"});
     });
     it("should render component when isGener is false", () => {
         wrapper.find(".title");
-        wrapper.setState({searchResult:data, isGener:false,searchValue:"girls"})
+        wrapper.setState({searchResult:data, isGener:false,searchValue:"girls"});
     });
+    it ('should call methodName during componentDidMount',async()=>{
+        const component=SetUp();
+        await component.instance().ShowListData();
+     })
+     it('should call methodName', async () => {
+        const getSelecteGenerList = await getSelectectGener();
+        expect(getSelecteGenerList).toBeDefined();
+     })
 });

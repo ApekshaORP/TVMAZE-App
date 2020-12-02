@@ -1,12 +1,9 @@
-import { render, screen } from '@testing-library/react';
 import App from './App';
 import { shallow } from "enzyme";
-
 describe("Testpage Component", () => {
   it("should render without throwing an error", () => {
       const component =shallow(
-              <App />
-      )
+              <App /> )
       expect(component).toBeDefined();
   });
 });

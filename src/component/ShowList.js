@@ -6,7 +6,6 @@ import ShowsCard from './ShowsCard';
 import { getSelectectGener,searchShows } from '../services/Common';
 import ScrollToTop from "react-scroll-to-top";
 import '../styles/Shows.css';
-
 class ShowList extends Component {
     constructor(props) {
         super(props);
@@ -25,17 +24,15 @@ class ShowList extends Component {
         if (Url[1] === "tv") {
             // for genres list API
             let searchValue = Url[Url.length - 1];
-            this.setState({ searchValue: searchValue })
            //fetch Api data of genres from generShowList() function.
            const generShowList = await getSelectectGener(searchValue);
-            this.setState({ isGener: true, searchResult: generShowList });
+            this.setState({ isGener: true, searchResult: generShowList,searchValue: searchValue });
         } else {
             // for search shows
             let searchValue = Url[Url.length - 1]
-            this.setState({ searchValue: searchValue });
             //fetch Api data from searchShows() function.
             const generShowList = await searchShows(searchValue);
-            this.setState({ searchResult:generShowList, isGener: false })
+            this.setState({ searchResult:generShowList, isGener: false,searchValue: searchValue })
          }
     }
     render() {

@@ -5,7 +5,6 @@ import ScrollToTop from "react-scroll-to-top";
 import ShowCast from './ShowCast';
 import '../styles/ShowDetails.css';
 import NoImg from '../images/noimg.jpg';
-
 import { getEpisodes, getCastList } from '../services/ApiCall';
 class ShowsDetails extends Component {
     constructor(props) {
