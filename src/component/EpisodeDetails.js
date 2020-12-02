@@ -7,7 +7,6 @@ import React, { Component } from 'react';
 import { getEpisodeDetails } from '../services/ApiCall';
 import '../styles/Home.css';
 import ScrollToTop from "react-scroll-to-top";
-import NoImg from '../images/noimg.jpg';
 class EpisodeDetails extends Component {
     constructor(props) {
         super(props);
@@ -35,7 +34,7 @@ class EpisodeDetails extends Component {
                 <div class="container">
                     <div class="image">
                         {showDetails && showDetails.image ? <img src={showDetails.image && showDetails.image.medium} alt="show poster" /> :
-                            <img src={NoImg} alt="Image_not_found" />}
+                            ""}
                     </div>
                     <div className="episodeDetails">
                         <h2>{showDetails && showDetails.name}</h2>

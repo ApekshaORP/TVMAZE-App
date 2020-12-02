@@ -36,7 +36,7 @@ class ShowsCard extends Component {
                             <div>
                             {this.props.rating && this.props.rating.average ?<div className="Star_img"> 
                                 <img src={starImg} alt="star" />
-                            <h5>{rating.average}</h5> </div>: <h5>NA</h5>}
+                            <h5>{rating.average}</h5> </div>: ""}
                             </div>
                         </div>
                         <div className="show_overview">
