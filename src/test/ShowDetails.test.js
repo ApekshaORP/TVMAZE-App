@@ -1,6 +1,7 @@
 import React from 'react';
 import ShowDetails from '../component/ShowsDetails';
 import {shallow} from 'enzyme';
+
 const responseData =  
     {  image: {
             medium: "http://static.tvmaze.com/uploads/images/medium_portrait/60/152357.jpg",
@@ -46,5 +47,6 @@ describe('Show Details component', () => {
     const component=SetUp();
     component.setState({showDetails:responseData,EpisodeList:EpisodeList});
      component.find('.container');
-})
+
+});
   });

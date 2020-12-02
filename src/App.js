@@ -6,6 +6,8 @@ import NotFoundPage from './component/ErrorPage';
 import Navbar from './component/NavBar';
 import ShowsDetails from './component/ShowsDetails';
 import ShowsList from './component/ShowList';
+import Episodes from './component/Episode';
+import EpisodeDetails from './component/EpisodeDetails'
 import './styles/Home.css';
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/tv/showsearch/:searchvalue" component={ShowsList} />
+          <Route exact path="/tv/episode/:seasonNo" component={Episodes} />
+          <Route exact path="/tv/episode/:EpisodeNo/:seasonNo/:ShowId" component={EpisodeDetails} />
           <Route exact path="/tv/:name/:episodeId" component={ShowsDetails} />
           <Route exact path="/showsearch/:searchvalue" component={ShowsList} />
           <Route component={NotFoundPage} />

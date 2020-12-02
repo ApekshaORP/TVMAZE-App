@@ -1,6 +1,6 @@
 import React from 'react';
 import ShowCast from '../component/ShowCast';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 let Title = "Episode";
 let EpisodeData = [{
   id: 1,
@@ -61,7 +61,7 @@ let CastList = {
   }]
 }
 const SetUp = () => {
-  const component = shallow(<ShowCast Title={Title} EpisodeList={EpisodeData} castList={CastList} />);
+  const component = shallow(<ShowCast Title={Title} SeasonList={EpisodeData} castList={CastList} />);
   return component;
 }
 describe('Show cast component', () => {
@@ -70,9 +70,10 @@ describe('Show cast component', () => {
     const wrapper = component.find('.show_cast');
     expect(wrapper.length).toBe(1);
   });
-  it('should call methodName during componentDidMount', () => {
-    const wrapper = mount(<ShowCast Title={Title} EpisodeList={EpisodeData} CastList={CastList} />);
-    wrapper.instance();
-  });
+  
+  it ('should call methodName during componentDidMount',async()=>{
+    const component=SetUp();
+    await component.instance().componentDidMount();
+ });
 });
 

@@ -51,7 +51,19 @@ const responseData = {
     }
   }]
 }
-export const getEpisodes = async () => {
+export const getSeasons = async () => {
+  const responseInfo = await new Promise(resolve => {
+    resolve(responseData);
+  })
+  return responseInfo;
+}
+export const getEpisodeList = async () => {
+  const responseInfo = await new Promise(resolve => {
+    resolve(responseData);
+  })
+  return responseInfo;
+}
+export const getEpisodeDetails = async () => {
   const responseInfo = await new Promise(resolve => {
     resolve(responseData);
   })

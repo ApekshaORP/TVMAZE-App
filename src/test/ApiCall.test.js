@@ -1,7 +1,31 @@
-import { getShows, getEpisodes, getCastList, getShowsBySearch } from '../services/ApiCall';
+import { getShows, getSeasons, getCastList, getShowsBySearch,getEpisodeList,getEpisodeDetails } from '../services/ApiCall';
 import axios from "axios";
 jest.mock('axios');
 describe('API test case', () => {
+    var Apidata = {
+        data: [{
+            id: 1,
+            url: "http://www.tvmaze.com/episodes/1/under-the-dome-1x01-pilot",
+            name: "Pilot",
+            season: 1,
+            number: 1,
+            type: "regular",
+            airdate: "2013-06-24",
+            airtime: "22:00",
+            airstamp: "2013-06-25T02:00:00+00:00",
+            runtime: 60,
+            image: {
+                medium: "http://static.tvmaze.com/uploads/images/medium_landscape/1/4388.jpg",
+                original: "http://static.tvmaze.com/uploads/images/original_untouched/1/4388.jpg"
+            },
+            summary: "<p>When the residents of Chester's Mill find themselves trapped under a massive transparent dome with no way out, they struggle to survive as resources rapidly dwindle and panic quickly escalates.</p>",
+            _links: {
+                self: {
+                    href: "http://api.tvmaze.com/episodes/1"
+                }
+            }
+        }]
+    }
     it('API call test for getShows information', async () => {
         const responseData = {
             data: [
@@ -26,29 +50,7 @@ describe('API test case', () => {
                         },
 
                     }
-                },
-                {
-                    "score": 15.833251,
-                    "show": {
-                        "id": 44163,
-                        "url": "http://www.tvmaze.com/shows/44163/bangkok-g-story",
-                        "name": "Bangkok G Story",
-                        "type": "Scripted",
-
-                        "genres": [
-                            "Drama",
-                            "Comedy"
-                        ],
-
-                        "rating": {
-                            "average": null
-                        },
-
-                        "image": {
-                            "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/213/533970.jpg",
-                            "original": "http://static.tvmaze.com/uploads/images/original_untouched/213/533970.jpg"
-                        }
-                    }
+                
                 }]
 
         };
@@ -56,33 +58,21 @@ describe('API test case', () => {
         await expect(getShows()).resolves.toEqual(responseData);
     });
 
-    it('API call test for getEpisodes', async () => {
-        const responseData = {
-            data: [{
-                id: 1,
-                url: "http://www.tvmaze.com/episodes/1/under-the-dome-1x01-pilot",
-                name: "Pilot",
-                season: 1,
-                number: 1,
-                type: "regular",
-                airdate: "2013-06-24",
-                airtime: "22:00",
-                airstamp: "2013-06-25T02:00:00+00:00",
-                runtime: 60,
-                image: {
-                    medium: "http://static.tvmaze.com/uploads/images/medium_landscape/1/4388.jpg",
-                    original: "http://static.tvmaze.com/uploads/images/original_untouched/1/4388.jpg"
-                },
-                summary: "<p>When the residents of Chester's Mill find themselves trapped under a massive transparent dome with no way out, they struggle to survive as resources rapidly dwindle and panic quickly escalates.</p>",
-                _links: {
-                    self: {
-                        href: "http://api.tvmaze.com/episodes/1"
-                    }
-                }
-            }]
-        }
-        axios.get.mockImplementationOnce(() => Promise.resolve(responseData));
-        await expect(getEpisodes()).resolves.toEqual(responseData);
+    it('API call test for getSeasons', async () => {
+        
+        axios.get.mockImplementationOnce(() => Promise.resolve(Apidata));
+        await expect(getSeasons()).resolves.toEqual(Apidata);
+    });
+    
+    it('API call test for getEpisodeDetails', async () => {
+        
+        axios.get.mockImplementationOnce(() => Promise.resolve(Apidata));
+        await expect(getEpisodeDetails()).resolves.toEqual(Apidata);
+    })
+    it('API call test for getEpisodeList', async () => {
+    
+        axios.get.mockImplementationOnce(() => Promise.resolve(Apidata));
+        await expect(getEpisodeList()).resolves.toEqual(Apidata);
     })
     it('API call test for getCastList', async () => {
         const CastList = {

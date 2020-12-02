@@ -40,7 +40,21 @@ font-weight: bold;
     animation: spin 2s linear infinite;
     align-items: center;
   }
-
+.episodeDetails{
+  padding: 2rem;
+}
+.back_button {
+  background: rgba(0, 0, 0, 0.5); 
+ 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 5px 5px 5px 5px;
+  cursor: pointer;
+}
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

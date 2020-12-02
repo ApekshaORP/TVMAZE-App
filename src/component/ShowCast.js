@@ -6,7 +6,20 @@ import No_Cast_Img from '../images/no-cast-img.png';
 import NoImg from '../images/noimg.jpg';
 import '../styles/ShowCast.css';
 
-export default class ShowCast extends Component {   
+export default class ShowCast extends Component {  
+  constructor(props) {
+    super(props);
+    this.state = {
+      ShowId:""
+    }
+}
+   componentDidMount() {
+    const Url = window.location.pathname.split("/");
+    let ShowId = parseInt(Url[Url.length - 1]);
+    if(ShowId){
+       this.setState({ShowId:ShowId});
+      }
+  } 
   render() {
     const settings = {
       speed: 500,
@@ -43,7 +56,8 @@ export default class ShowCast extends Component {
         }
       ]
     };
-    const {castList ,Title,EpisodeList}=this.props;
+    const {castList ,Title,SeasonList}=this.props;
+    const {ShowId} =this.state;
     return (<div className="show_cast">
     
      {castList && castList.cast &&castList.cast.length>0? 
@@ -65,17 +79,17 @@ export default class ShowCast extends Component {
             ))}
         </Slider>
       </div></>:""}
-      {EpisodeList &&EpisodeList.length> 0?
+      {SeasonList &&SeasonList.length> 0?
       <>  <div className="episode_title">{Title}</div>
       <div className="slider slider_container">
-          {/* Slider list for Episode in shows */}
+          {/* Slider list for Season in shows */}
         <Slider {...settings}>
-            {EpisodeList &&EpisodeList.length>0 && EpisodeList.map((item,index)=>(
-                     <a href key={index}>
+            {SeasonList &&SeasonList.length>0 && SeasonList.map((item,index)=>(
+                     <a href={`/tv/episode/${ShowId}`} key={index}>
                 <div className="slider" key={index}>
                   {item.image&&item.image.medium? <img src={item.image&&item.image.medium} alt={item.name} />   
-:<img src={NoImg} alt="Image_not_found"/>}
-            <p className="author_name">{item.name}</p> 
+            :<img src={NoImg} alt="Image_not_found"/>}
+            <p className="author_name">{item.number}</p> 
                 </div> 
                 </a>
             ))}

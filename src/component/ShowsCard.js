@@ -5,12 +5,30 @@ import NoImg from '../images/noimg.jpg';
 import starImg from '../images/star.png';
 import '../styles/Shows.css';
 class ShowsCard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ShowId: "",
+
+        }
+    }
+       componentDidMount() {
+        const Url = window.location.pathname.split("/");
+        let ShowId = parseInt(Url[Url.length - 1]);
+        //fetch Api data from topShows() function.
+        if(ShowId){
+            this.setState({ ShowId: ShowId })
+
+        }
+    }
     render() {
-        const { image, rating, summary, name, id } = this.props;
+        const { image, rating, summary, name, id,isEpisode,season,number } = this.props;
+        const {ShowId}=this.state;
         return (
             <>{this.props ?
+                
                 <div className="shows_card">
-                    <a className="isDisabled" href={`/tv/${name}/${id}`}>
+                    <a className="isDisabled" href={isEpisode?`/tv/episode/${number}/${season}/${ShowId}`:`/tv/${name}/${id}`}>
                         {this.props.image ? <img src={image.medium} alt={name} /> :
                             <img src={NoImg} alt={name} className="no_img" />}
                         <div className="show_info">
